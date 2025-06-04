@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">YOUR_REPOSITORY_NAME</h2>
+  <h1 align="center">LazyTrigger.nvim</h2>
 </p>
 
 <p align="center">
@@ -47,9 +47,9 @@ _[GIF version of the showcase video for mobile users](SHOWCASE_GIF_LINK)_
 
 ```lua
 -- stable version
-use {"YOUR_REPOSITORY_NAME", tag = "*" }
+use {"LazyTrigger.nvim", tag = "*" }
 -- dev version
-use {"YOUR_REPOSITORY_NAME"}
+use {"LazyTrigger.nvim"}
 ```
 
 </td>
@@ -64,9 +64,9 @@ use {"YOUR_REPOSITORY_NAME"}
 
 ```lua
 -- stable version
-Plug "YOUR_REPOSITORY_NAME", { "tag": "*" }
+Plug "LazyTrigger.nvim", { "tag": "*" }
 -- dev version
-Plug "YOUR_REPOSITORY_NAME"
+Plug "LazyTrigger.nvim"
 ```
 
 </td>
@@ -81,9 +81,9 @@ Plug "YOUR_REPOSITORY_NAME"
 
 ```lua
 -- stable version
-require("lazy").setup({{"YOUR_REPOSITORY_NAME", version = "*"}})
+require("lazy").setup({{"LazyTrigger.nvim", version = "*"}})
 -- dev version
-require("lazy").setup({"YOUR_REPOSITORY_NAME"})
+require("lazy").setup({"LazyTrigger.nvim"})
 ```
 
 </td>
@@ -125,7 +125,7 @@ PRs and issues are always welcome. Make sure to provide as much context as possi
 
 ## 🗞 Wiki
 
-You can find guides and showcase of the plugin on [the Wiki](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME/wiki)
+You can find guides and showcase of the plugin on [the Wiki](https://github.com/doodleEsc/LazyTrigger.nvim/wiki)
 
 ## 🎭 Motivations
 

@@ -1,5 +1,5 @@
-YourPluginName.disable()	neovim-plugin-boilerplate.txt	/*YourPluginName.disable()*
-YourPluginName.enable()	neovim-plugin-boilerplate.txt	/*YourPluginName.enable()*
-YourPluginName.options	neovim-plugin-boilerplate.txt	/*YourPluginName.options*
-YourPluginName.setup()	neovim-plugin-boilerplate.txt	/*YourPluginName.setup()*
-YourPluginName.toggle()	neovim-plugin-boilerplate.txt	/*YourPluginName.toggle()*
+LazyTrigger.disable()	neovim-plugin-boilerplate.txt	/*YourPluginName.disable()*
+LazyTrigger.enable()	neovim-plugin-boilerplate.txt	/*YourPluginName.enable()*
+LazyTrigger.options	neovim-plugin-boilerplate.txt	/*YourPluginName.options*
+LazyTrigger.setup()	neovim-plugin-boilerplate.txt	/*YourPluginName.setup()*
+LazyTrigger.toggle()	neovim-plugin-boilerplate.txt	/*YourPluginName.toggle()*
