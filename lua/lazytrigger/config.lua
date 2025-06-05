@@ -10,6 +10,12 @@ local LazyTrigger = {}
 LazyTrigger.options = {
     -- Prints useful logs about what event are triggered, and reasons actions are executed.
     debug = false,
+    events = {
+        {
+            name = "MyDeferEvent",
+            delay = 100,
+        },
+    },
 }
 
 ---@private

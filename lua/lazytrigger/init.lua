@@ -29,6 +29,7 @@ end
 -- setup LazyTrigger options and merge them with user provided ones.
 function LazyTrigger.setup(opts)
     _G.LazyTrigger.config = config.setup(opts)
+    main.setup()
 end
 
 _G.LazyTrigger = LazyTrigger

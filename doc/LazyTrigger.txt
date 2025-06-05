@@ -1,0 +1,91 @@
+==============================================================================
+------------------------------------------------------------------------------
+                                                          *LazyTrigger.toggle()*
+                             `LazyTrigger.toggle`()
+Toggle the plugin by calling the `enable`/`disable` methods respectively.
+
+------------------------------------------------------------------------------
+                                                          *LazyTrigger.enable()*
+                         `LazyTrigger.enable`({scope})
+Initializes the plugin, sets event listeners and internal state.
+
+------------------------------------------------------------------------------
+                                                         *LazyTrigger.disable()*
+                            `LazyTrigger.disable`()
+Disables the plugin, clear highlight groups and autocmds, closes side buffers and resets the internal state.
+
+
+==============================================================================
+------------------------------------------------------------------------------
+                                                           *LazyTrigger.options*
+                             `LazyTrigger.options`
+LazyTrigger configuration with its default values.
+
+Type ~
+`(table)`
+Default values:
+>lua
+  LazyTrigger.options = {
+      -- Prints useful logs about what event are triggered, and reasons actions are executed.
+      debug = false,
+  }
+
+<
+------------------------------------------------------------------------------
+                                                           *LazyTrigger.setup()*
+                         `LazyTrigger.setup`({options})
+Define your LazyTrigger setup.
+
+Parameters ~
+{options} `(table)` Module config table. See |LazyTrigger.options|.
+
+Usage ~
+`require("LazyTrigger").setup()` (add `{}` with your |LazyTrigger.options| table)
+
+
+==============================================================================
+------------------------------------------------------------------------------
+                                                          *LazyTrigger.toggle()*
+                             `LazyTrigger.toggle`()
+Toggle the plugin by calling the `enable`/`disable` methods respectively.
+
+------------------------------------------------------------------------------
+                                                          *LazyTrigger.enable()*
+                         `LazyTrigger.enable`({scope})
+Initializes the plugin, sets event listeners and internal state.
+
+------------------------------------------------------------------------------
+                                                         *LazyTrigger.disable()*
+                            `LazyTrigger.disable`()
+Disables the plugin, clear highlight groups and autocmds, closes side buffers and resets the internal state.
+
+
+==============================================================================
+------------------------------------------------------------------------------
+                                                           *LazyTrigger.options*
+                             `LazyTrigger.options`
+LazyTrigger configuration with its default values.
+
+Type ~
+`(table)`
+Default values:
+>lua
+  LazyTrigger.options = {
+      -- Prints useful logs about what event are triggered, and reasons actions are executed.
+      debug = false,
+  }
+
+<
+------------------------------------------------------------------------------
+                                                           *LazyTrigger.setup()*
+                         `LazyTrigger.setup`({options})
+Define your lazytrigger setup.
+
+Parameters ~
+{options} `(table)` Module config table. See |LazyTrigger.options|.
+
+Usage ~
+`require("lazytrigger").setup()` (add `{}` with your |LazyTrigger.options| table)
+
+
+ vim:tw=78:ts=8:noet:ft=help:norl:

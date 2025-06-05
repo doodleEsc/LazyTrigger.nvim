@@ -54,4 +54,27 @@ function main.disable(scope)
     state.save(state)
 end
 
+--- @param scope string?: internal identifier for logging purposes.
+---@private
+function main.setup(scope)
+    local log_scope = scope or "main"
+    local config = _G.LazyTrigger.config
+
+    -- defer fire event
+    for _, event in ipairs(config.events) do
+        local lazy_event = event.name
+        local lazy_delay = event.delay
+
+        vim.schedule(function()
+            vim.defer_fn(function()
+                vim.api.nvim_exec_autocmds("User", { pattern = lazy_event })
+                log.debug(
+                    log_scope,
+                    string.format("Event %s Fired after %dms", lazy_event, lazy_delay)
+                )
+            end, lazy_delay)
+        end)
+    end
+end
+
 return main
