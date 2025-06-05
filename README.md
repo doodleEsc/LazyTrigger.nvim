@@ -1,132 +1,99 @@
-<p align="center">
-  <h1 align="center">LazyTrigger.nvim</h2>
-</p>
+# LazyTrigger.nvim
 
-<p align="center">
-    > A catch phrase that describes your plugin.
-</p>
+A minimalist Neovim plugin for lazily triggering user-defined events, optimizing your Neovim startup time or executing actions when specific conditions are met.
 
-<div align="center">
-    > Drag your video (<10MB) here to host it for free on GitHub.
-</div>
+## ✨ Features
 
-<div align="center">
+- **Lazy Event Triggering**: Trigger custom user events after a specified delay.
+- **Lightweight**: The plugin code is concise and does not introduce additional overhead.
+- **Configurable**: Flexible configuration for debug mode and lazy events.
 
-> Videos don't work on GitHub mobile, so a GIF alternative can help users.
+## 🚀 Installation
 
-_[GIF version of the showcase video for mobile users](SHOWCASE_GIF_LINK)_
+Install using your favorite plugin manager.
 
-</div>
-
-## ⚡️ Features
-
-> Write short sentences describing your plugin features
-
-- FEATURE 1
-- FEATURE ..
-- FEATURE N
-
-## 📋 Installation
-
-<div align="center">
-<table>
-<thead>
-<tr>
-<th>Package manager</th>
-<th>Snippet</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-[wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
-
-</td>
-<td>
+**lazy.nvim**:
 
 ```lua
--- stable version
-use {"LazyTrigger.nvim", tag = "*" }
--- dev version
-use {"LazyTrigger.nvim"}
+{
+  'doodleEsc/LazyTrigger.nvim', -- Replace with your GitHub username/repository name
+  config = function()
+    require('lazytrigger').setup({
+      -- Your configuration options
+    })
+  end
+}
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+## ⚙️ Configuration
 
-[junegunn/vim-plug](https://github.com/junegunn/vim-plug)
-
-</td>
-<td>
+`LazyTrigger.nvim` can be configured via the `setup()` function. Below are the available options and their default values:
 
 ```lua
--- stable version
-Plug "LazyTrigger.nvim", { "tag": "*" }
--- dev version
-Plug "LazyTrigger.nvim"
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-[folke/lazy.nvim](https://github.com/folke/lazy.nvim)
-
-</td>
-<td>
-
-```lua
--- stable version
-require("lazy").setup({{"LazyTrigger.nvim", version = "*"}})
--- dev version
-require("lazy").setup({"LazyTrigger.nvim"})
-```
-
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-## ☄ Getting started
-
-> Describe how to use the plugin the simplest way
-
-## ⚙ Configuration
-
-> The configuration list sometimes become cumbersome, making it folded by default reduce the noise of the README file.
-
-<details>
-<summary>Click to unfold the full list of options with their default values</summary>
-
-> **Note**: The options are also available in Neovim by calling `:h your-plugin-name.options`
-
-```lua
-require("your-plugin-name").setup({
-    -- you can copy the full list from lua/your-plugin-name/config.lua
+require('lazytrigger').setup({
+    -- Prints useful logs about event triggers and reasons for action execution.
+    debug = false,
+    -- List of events to trigger lazily.
+    events = {
+        {
+            -- Event name, will be triggered as a pattern for `User` autocommand.
+            name = "MyDeferEvent",
+            -- Delay time (milliseconds).
+            delay = 100,
+        },
+        -- You can add more events
+        -- {
+        --    name = "AnotherDeferredEvent",
+        --    delay = 500,
+        -- },
+    },
 })
 ```
 
-</details>
+## 💡 Usage
 
-## 🧰 Commands
+The core idea of `LazyTrigger.nvim` is to lazily trigger `User` autocommands. You can define these events in the `events` configuration and listen for them in your Neovim configuration.
 
-|   Command   |         Description        |
-|-------------|----------------------------|
-|  `:Toggle`  |     Enables the plugin.    |
+**Example**: Lazily load a plugin or perform some time-consuming operations.
 
-## ⌨ Contributing
+In your `init.lua` (or any Neovim configuration):
 
-PRs and issues are always welcome. Make sure to provide as much context as possible when opening one.
+```lua
+-- Define events in LazyTrigger.nvim setup
+require('lazytrigger').setup({
+    events = {
+        {
+            name = "MyPluginLoadEvent",
+            delay = 200, -- Trigger after 200 milliseconds
+        },
+    },
+})
 
-## 🗞 Wiki
+-- Listen for MyPluginLoadEvent and perform actions
+vim.api.nvim_create_autocmd("User", {
+    pattern = "MyPluginLoadEvent",
+    callback = function()
+        print("MyPluginLoadEvent triggered! Loading my plugin...")
+        -- Place your plugin loading logic or time-consuming operations here
+    end,
+})
 
-You can find guides and showcase of the plugin on [the Wiki](https://github.com/doodleEsc/LazyTrigger.nvim/wiki)
+-- You can also manually trigger or toggle LazyTrigger's state
+-- require('lazytrigger').toggle() -- Toggle enable/disable state
+-- require('lazytrigger').enable()  -- Enable
+-- require('lazytrigger').disable() -- Disable
+```
 
-## 🎭 Motivations
+## ⚡ Commands
 
-> If alternatives of your plugin exist, you can provide some pros/cons of using yours over the others.
+| Command        | Description                 | Usage          |
+| -------------- | --------------------------- | -------------- |
+| `:LazyTrigger` | Toggles the plugin's state. | `:LazyTrigger` |
+
+## 🤝 Contributing
+
+Contributions are welcome! If you have any questions, suggestions, or want to report bugs, feel free to open an issue or submit a Pull Request on GitHub.
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
